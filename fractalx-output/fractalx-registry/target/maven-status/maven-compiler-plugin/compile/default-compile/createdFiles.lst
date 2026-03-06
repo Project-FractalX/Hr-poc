@@ -1,0 +1,4 @@
+org\fractalx\registry\FractalRegistryApplication.class
+org\fractalx\registry\model\ServiceRegistration.class
+org\fractalx\registry\controller\RegistryController.class
+org\fractalx\registry\service\RegistryService.class

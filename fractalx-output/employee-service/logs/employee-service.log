@@ -1,0 +1,67 @@
+2026-03-06 19:08:36.131 [NO_CORR] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-03-06 19:08:36.318 [NO_CORR] INFO  o.f.g.e.EmployeeServiceApplication - Starting EmployeeServiceApplication using Java 23.0.2 with PID 13232 (C:\Users\ADMIN\Downloads\hr monolith\hr-monolith\fractalx-output\employee-service\target\classes started by ADMIN in C:\Users\ADMIN\Downloads\hr monolith\hr-monolith\fractalx-output\employee-service)
+2026-03-06 19:08:36.319 [NO_CORR] DEBUG o.f.g.e.EmployeeServiceApplication - Running with Spring Boot v3.2.0, Spring v6.1.1
+2026-03-06 19:08:36.323 [NO_CORR] INFO  o.f.g.e.EmployeeServiceApplication - The following 1 profile is active: "dev"
+2026-03-06 19:08:37.790 [NO_CORR] DEBUG o.f.n.c.c.NetScopeClientRegistrar - NetScope client: scanning packages [org.fractalx.generated.employeeservice, com.example.hr, org.fractalx.runtime] for @NetScopeClient interfaces
+2026-03-06 19:08:37.795 [NO_CORR] DEBUG o.f.n.c.c.NetScopeClientRegistrar$1 - Identified candidate component class: file [C:\Users\ADMIN\Downloads\hr monolith\hr-monolith\fractalx-output\employee-service\target\classes\org\fractalx\generated\employeeservice\validation\AggregateExistsClient.class]
+2026-03-06 19:08:37.795 [NO_CORR] DEBUG o.f.n.c.c.NetScopeClientRegistrar$1 - Identified candidate component class: file [C:\Users\ADMIN\Downloads\hr monolith\hr-monolith\fractalx-output\employee-service\target\classes\org\fractalx\generated\employeeservice\validation\CorrelationExistsClient.class]
+2026-03-06 19:08:37.799 [NO_CORR] DEBUG o.f.n.c.c.NetScopeClientRegistrar - NetScope client: registering proxy bean 'aggregateExistsClient' for org.fractalx.generated.employeeservice.validation.AggregateExistsClient
+2026-03-06 19:08:37.801 [NO_CORR] DEBUG o.f.n.c.c.NetScopeClientRegistrar - NetScope client: registering proxy bean 'correlationExistsClient' for org.fractalx.generated.employeeservice.validation.CorrelationExistsClient
+2026-03-06 19:08:37.804 [NO_CORR] DEBUG o.f.n.c.c.NetScopeClientRegistrar$1 - Identified candidate component class: file [C:\Users\ADMIN\Downloads\hr monolith\hr-monolith\fractalx-output\employee-service\target\classes\com\example\hr\employee\DepartmentServiceClient.class]
+2026-03-06 19:08:37.805 [NO_CORR] DEBUG o.f.n.c.c.NetScopeClientRegistrar$1 - Identified candidate component class: file [C:\Users\ADMIN\Downloads\hr monolith\hr-monolith\fractalx-output\employee-service\target\classes\com\example\hr\employee\PayrollServiceClient.class]
+2026-03-06 19:08:37.805 [NO_CORR] DEBUG o.f.n.c.c.NetScopeClientRegistrar - NetScope client: registering proxy bean 'departmentServiceClient' for com.example.hr.employee.DepartmentServiceClient
+2026-03-06 19:08:37.806 [NO_CORR] DEBUG o.f.n.c.c.NetScopeClientRegistrar - NetScope client: registering proxy bean 'payrollServiceClient' for com.example.hr.employee.PayrollServiceClient
+2026-03-06 19:08:39.388 [NO_CORR] INFO  o.f.r.NetScopeGrpcServerBeanOverrider - NetScopeGrpcServerBeanOverrider: replaced 'netScopeGrpcServer' with CorrelationAwareNetScopeGrpcServer
+2026-03-06 19:08:39.910 [NO_CORR] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'fractalXRuntimeAutoConfiguration' of type [org.fractalx.runtime.FractalXRuntimeAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [netScopeGrpcInterceptorConfigurer] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2026-03-06 19:08:39.953 [NO_CORR] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'netScopeContextInterceptor' of type [org.fractalx.runtime.NetScopeContextInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [netScopeGrpcInterceptorConfigurer]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-03-06 19:08:40.974 [NO_CORR] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-03-06 19:08:40.983 [NO_CORR] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-06 19:08:40.984 [NO_CORR] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2026-03-06 19:08:41.171 [NO_CORR] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-03-06 19:08:43.159 [NO_CORR] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-06 19:08:43.802 [NO_CORR] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:employee_service user=SA
+2026-03-06 19:08:43.807 [NO_CORR] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-06 19:08:44.068 [NO_CORR] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2026-03-06 19:08:44.087 [NO_CORR] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2026-03-06 19:08:44.103 [NO_CORR] INFO  o.f.c.i.license.VersionPrinter - 
+2026-03-06 19:08:44.327 [NO_CORR] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:h2:mem:employee_service (H2 2.2)
+2026-03-06 19:08:44.350 [NO_CORR] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+2026-03-06 19:08:44.404 [NO_CORR] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
+2026-03-06 19:08:44.410 [NO_CORR] INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.037s)
+2026-03-06 19:08:44.427 [NO_CORR] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+2026-03-06 19:08:44.477 [NO_CORR] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "PUBLIC": << Empty Schema >>
+2026-03-06 19:08:44.494 [NO_CORR] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "PUBLIC" to version "1 - init"
+2026-03-06 19:08:44.524 [NO_CORR] INFO  o.f.core.internal.command.DbMigrate - Successfully applied 1 migration to schema "PUBLIC", now at version v1 (execution time 00:00.019s)
+2026-03-06 19:08:44.833 [NO_CORR] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-06 19:08:44.958 [NO_CORR] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
+2026-03-06 19:08:45.056 [NO_CORR] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-03-06 19:08:48.082 [NO_CORR] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-06 19:08:48.519 [NO_CORR] INFO  o.f.g.e.NetScopeRegistryBridge - Resolved department-service -> localhost:18085 via registry
+2026-03-06 19:08:48.546 [NO_CORR] WARN  o.f.g.e.NetScopeRegistryBridge - Registry lookup for payroll-service failed (attempt 1/5): 404 : [no body]
+2026-03-06 19:08:50.563 [NO_CORR] WARN  o.f.g.e.NetScopeRegistryBridge - Registry lookup for payroll-service failed (attempt 2/5): 404 : [no body]
+2026-03-06 19:08:54.580 [NO_CORR] WARN  o.f.g.e.NetScopeRegistryBridge - Registry lookup for payroll-service failed (attempt 3/5): 404 : [no body]
+2026-03-06 19:09:00.597 [NO_CORR] WARN  o.f.g.e.NetScopeRegistryBridge - Registry lookup for payroll-service failed (attempt 4/5): 404 : [no body]
+2026-03-06 19:09:08.604 [NO_CORR] INFO  o.f.g.e.NetScopeRegistryBridge - Resolved payroll-service -> localhost:18082 via registry
+2026-03-06 19:09:09.116 [NO_CORR] INFO  o.f.n.c.c.NetScopeClientAutoConfiguration - NetScope Client Auto-Configuration initialized
+2026-03-06 19:09:09.349 [NO_CORR] INFO  o.f.g.e.FractalRegistryClient - Registered with fractalx-registry: employee-service at localhost:8081
+2026-03-06 19:09:09.386 [NO_CORR] INFO  o.f.r.NetScopeGrpcInterceptorConfigurer - NetScopeGrpcInterceptorConfigurer: correlation ClientInterceptor wired into NetScopeChannelFactory
+2026-03-06 19:09:09.419 [NO_CORR] DEBUG o.f.n.c.reactive.ReactiveSupport - NetScope client: Project Reactor not on classpath — reactive return types disabled
+2026-03-06 19:09:09.761 [NO_CORR] INFO  o.f.n.s.c.NetScopeAutoConfiguration - NetScope Auto-Configuration initialized
+2026-03-06 19:09:09.782 [NO_CORR] DEBUG o.f.n.server.core.NetScopeInvoker - NetScope: Project Reactor not on classpath — reactive unwrapping disabled
+2026-03-06 19:09:09.790 [NO_CORR] DEBUG o.f.r.NetScopeObjectMapperConfigurer - NetScopeObjectMapperConfigurer: registered JavaTimeModule on NetScopeInvoker
+2026-03-06 19:09:09.808 [NO_CORR] WARN  o.f.n.s.s.OAuth2AuthorizationService - NetScope: Security DISABLED — all methods accessible without authentication
+2026-03-06 19:09:09.826 [NO_CORR] INFO  o.f.n.s.grpc.NetScopeGrpcServiceImpl - NetScope gRPC service initialized
+2026-03-06 19:09:09.991 [NO_CORR] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-06 19:09:12.959 [NO_CORR] INFO  o.f.r.CorrelationAwareNetScopeGrpcServer - CorrelationAwareNetScopeGrpcServer started on port 18081 with correlation interceptor
+2026-03-06 19:09:13.018 [NO_CORR] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-03-06 19:09:13.059 [NO_CORR] INFO  o.f.g.e.EmployeeServiceApplication - Started EmployeeServiceApplication in 37.971 seconds (process running for 38.813)
+2026-03-06 19:09:22.811 [NO_CORR] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-06 19:16:23.322 [3064c85f-a1d2-4e2f-9145-64f0566b30c5] INFO  o.f.runtime.AutomaticRequestLogger - [AUTO-LOG] [CorrelationId:3064c85f-a1d2-4e2f-9145-64f0566b30c5] Entering EmployeeController.onboard() with args: [com.example.hr.employee.dto.OnboardEmployeeRequest@7e459025]
+2026-03-06 19:16:23.374 [3064c85f-a1d2-4e2f-9145-64f0566b30c5] DEBUG o.f.g.e.outbox.OutboxPublisher - Outbox event queued: type=onboard-employee-saga aggregateId=Alice correlationId=3064c85f-a1d2-4e2f-9145-64f0566b30c5 traceparent=00-f038ee3b654177869538280960142355-38fd2a422bef4eb9-01
+2026-03-06 19:16:23.396 [3064c85f-a1d2-4e2f-9145-64f0566b30c5] INFO  o.f.runtime.AutomaticRequestLogger - [AUTO-LOG] [CorrelationId:3064c85f-a1d2-4e2f-9145-64f0566b30c5] Exiting EmployeeController.onboard() returned: <200 OK OK,com.example.hr.employee.dto.EmployeeResponse@18928759,[]>
+2026-03-06 19:16:25.837 [3064c85f-a1d2-4e2f-9145-64f0566b30c5] INFO  o.f.runtime.AutomaticRequestLogger - [AUTO-LOG] [CorrelationId:3064c85f-a1d2-4e2f-9145-64f0566b30c5] Entering SagaCompletionController.onSagaFailed() with args: [3064c85f-a1d2-4e2f-9145-64f0566b30c5, 3064c85f-a1d2-4e2f-9145-64f0566b30c5, {"firstName":"Alice","lastName":"Wren","email":"alice@corp.com","position":"Senior Engineer","salary":95000,"departmentId":1,"employeeId":1,"errorMessage":"Remote call failed: DepartmentService.assignToDepartment()"}]
+2026-03-06 19:16:25.846 [3064c85f-a1d2-4e2f-9145-64f0566b30c5] WARN  o.f.g.e.s.SagaCompletionController - Saga FAILED — correlationId=3064c85f-a1d2-4e2f-9145-64f0566b30c5 error=Remote call failed: DepartmentService.assignToDepartment()
+2026-03-06 19:16:25.868 [3064c85f-a1d2-4e2f-9145-64f0566b30c5] WARN  o.f.g.e.s.SagaCompletionController - Employee 1 marked CANCELLED — saga failed: Remote call failed: DepartmentService.assignToDepartment() (correlationId=3064c85f-a1d2-4e2f-9145-64f0566b30c5)
+2026-03-06 19:16:25.875 [NO_CORR] INFO  o.f.runtime.AutomaticRequestLogger - [AUTO-LOG] [CorrelationId:27200852ff730a8e2f73aba5bb3ec696] Exiting SagaCompletionController.onSagaFailed() returned: <200 OK OK,[]>
+2026-03-06 19:16:25.924 [NO_CORR] DEBUG o.f.g.e.outbox.OutboxPoller - Dispatched saga event id=1 type=onboard-employee-saga correlationId=3064c85f-a1d2-4e2f-9145-64f0566b30c5 traceparent=00-f038ee3b654177869538280960142355-38fd2a422bef4eb9-01 to http://localhost:8099/saga/onboard-employee-saga/start
+2026-03-06 19:16:25.937 [NO_CORR] INFO  o.f.g.e.outbox.OutboxPoller - Forwarded outbox event id=1 type=onboard-employee-saga aggregateId=Alice

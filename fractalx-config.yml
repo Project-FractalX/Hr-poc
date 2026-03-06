@@ -1,0 +1,107 @@
+# ─── FractalX Decomposition Configuration ────────────────────────────────────
+# Run `mvn fractalx:decompose` to generate microservices from this monolith.
+# All output lands in fractalx-output/. Do NOT edit files there directly.
+
+fractalx:
+  version: "1.0"
+  source-package: "com.example.hr"
+
+  # ── Global settings ──────────────────────────────────────────────────────
+  output-dir: fractalx-output
+  base-package: com.example.hr
+
+  admin:
+    port: 9090
+    username: admin
+    password: "${ADMIN_PASSWORD:admin123}"
+
+  registry:
+    port: 8761
+
+  gateway:
+    port: 9999
+    cors:
+      allowed-origins: "*"
+    rate-limit:
+      requests-per-second: 100
+
+  saga-orchestrator:
+    port: 8099
+
+  logger-service:
+    port: 9099
+
+  tracing:
+    enabled: true
+    exporter: jaeger
+    jaeger-endpoint: http://jaeger:14268/api/traces
+
+  # ── Per-service overrides ─────────────────────────────────────────────────
+  services:
+
+    employee-service:
+      port: 8081
+      db:
+        name: employee_db
+      outbox:
+        poll-interval-ms: 500
+
+    payroll-service:
+      port: 8082
+      db:
+        name: payroll_db
+
+    leave-service:
+      port: 8083
+      db:
+        name: leave_db
+      outbox:
+        poll-interval-ms: 500
+
+    recruitment-service:
+      port: 8084
+      db:
+        name: recruitment_db
+      outbox:
+        poll-interval-ms: 500
+
+    department-service:
+      port: 8085
+      db:
+        name: department_db
+
+  # ── Saga definitions (FractalX reads these as hints; primary source is annotations) ─
+  sagas:
+
+    - id: onboard-employee-saga
+      owner: employee-service
+      timeout: 30000
+      steps:
+        - service: payroll-service
+          method:  setupPayroll
+          compensation: cancelSetupPayroll
+        - service: department-service
+          method:  assignToDepartment
+          compensation: cancelAssignToDepartment
+
+    - id: approve-leave-saga
+      owner: leave-service
+      timeout: 30000
+      steps:
+        - service: employee-service
+          method:  markOnLeave
+          compensation: cancelMarkOnLeave
+        - service: payroll-service
+          method:  deductLeave
+          compensation: cancelDeductLeave
+
+    - id: hire-employee-saga
+      owner: recruitment-service
+      timeout: 30000
+      steps:
+        - service: employee-service
+          method:  createEmployee
+          compensation: cancelCreateEmployee
+        - service: department-service
+          method:  incrementHeadcount
+          compensation: cancelIncrementHeadcount

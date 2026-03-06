@@ -1,0 +1,126 @@
+server:
+  port: 9999
+
+spring:
+  application:
+    name: fractalx-gateway
+  main:
+    web-application-type: reactive
+
+  cloud:
+    gateway:
+      default-filters:
+        - name: Retry
+          args:
+            retries: 2
+            statuses: BAD_GATEWAY,SERVICE_UNAVAILABLE,GATEWAY_TIMEOUT
+      routes:
+        # department-service Service
+        - id: department-service-service
+          uri: http://localhost:8085
+          predicates:
+            - Path=/api/department/**,/api/departments/**
+          filters:
+            - StripPrefix=0
+            - name: CircuitBreaker
+              args:
+                name: department-service
+                fallbackUri: forward:/fallback/department-service
+        # employee-service Service
+        - id: employee-service-service
+          uri: http://localhost:8081
+          predicates:
+            - Path=/api/employee/**,/api/employees/**
+          filters:
+            - StripPrefix=0
+            - name: CircuitBreaker
+              args:
+                name: employee-service
+                fallbackUri: forward:/fallback/employee-service
+        # leave-service Service
+        - id: leave-service-service
+          uri: http://localhost:8083
+          predicates:
+            - Path=/api/leave/**,/api/leaves/**
+          filters:
+            - StripPrefix=0
+            - name: CircuitBreaker
+              args:
+                name: leave-service
+                fallbackUri: forward:/fallback/leave-service
+        # payroll-service Service
+        - id: payroll-service-service
+          uri: http://localhost:8082
+          predicates:
+            - Path=/api/payroll/**,/api/payrolls/**
+          filters:
+            - StripPrefix=0
+            - name: CircuitBreaker
+              args:
+                name: payroll-service
+                fallbackUri: forward:/fallback/payroll-service
+        # recruitment-service Service
+        - id: recruitment-service-service
+          uri: http://localhost:8084
+          predicates:
+            - Path=/api/recruitment/**,/api/recruitments/**
+          filters:
+            - StripPrefix=0
+            - name: CircuitBreaker
+              args:
+                name: recruitment-service
+                fallbackUri: forward:/fallback/recruitment-service
+
+fractalx:
+  registry:
+    url: ${FRACTALX_REGISTRY_URL:http://localhost:8761}
+  observability:
+    otel:
+      endpoint: ${OTEL_EXPORTER_OTLP_ENDPOINT:http://localhost:4317}
+  gateway:
+    security:
+      # Set enabled: true and configure one or more auth mechanisms below
+      enabled: ${GATEWAY_SECURITY_ENABLED:false}
+      public-paths: /api/*/public/**, /api/*/auth/**
+      bearer:
+        enabled: ${GATEWAY_BEARER_ENABLED:false}
+        jwt-secret: ${JWT_SECRET:fractalx-default-secret-change-in-prod-min-32chars!!}
+      oauth2:
+        enabled: ${GATEWAY_OAUTH2_ENABLED:false}
+        jwk-set-uri: ${OAUTH2_JWK_URI:http://localhost:8080/realms/fractalx/protocol/openid-connect/certs}
+      basic:
+        enabled: ${GATEWAY_BASIC_ENABLED:false}
+        username: ${GATEWAY_BASIC_USER:fractalx}
+        password: ${GATEWAY_BASIC_PASS:changeme}
+      api-key:
+        enabled: ${GATEWAY_APIKEY_ENABLED:false}
+        valid-keys:
+          - ${GATEWAY_API_KEY_1:dev-key-replace-me}
+    cors:
+      allowed-origins: ${CORS_ORIGINS:http://localhost:3000,http://localhost:4200}
+      allowed-methods: GET,POST,PUT,DELETE,PATCH,OPTIONS
+      allow-credentials: true
+    rate-limit:
+      default-rps: ${GATEWAY_DEFAULT_RPS:100}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,gateway,routes,metrics
+  endpoint:
+    gateway:
+      enabled: true
+    health:
+      show-details: always
+  tracing:
+    sampling:
+      probability: 1.0
+
+logging:
+  level:
+    org.springframework.cloud.gateway: INFO
+    org.fractalx.gateway: INFO
+    reactor.netty: DEBUG
+    com.netflix.eureka: OFF
+    com.netflix.discovery: OFF

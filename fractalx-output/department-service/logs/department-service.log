@@ -1,0 +1,100 @@
+2026-03-06 19:08:30.517 [NO_CORR] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-03-06 19:08:30.589 [NO_CORR] INFO  o.f.g.d.DepartmentServiceApplication - Starting DepartmentServiceApplication using Java 23.0.2 with PID 31288 (C:\Users\ADMIN\Downloads\hr monolith\hr-monolith\fractalx-output\department-service\target\classes started by ADMIN in C:\Users\ADMIN\Downloads\hr monolith\hr-monolith\fractalx-output\department-service)
+2026-03-06 19:08:30.590 [NO_CORR] DEBUG o.f.g.d.DepartmentServiceApplication - Running with Spring Boot v3.2.0, Spring v6.1.1
+2026-03-06 19:08:30.591 [NO_CORR] INFO  o.f.g.d.DepartmentServiceApplication - The following 1 profile is active: "dev"
+2026-03-06 19:08:33.965 [NO_CORR] INFO  o.f.r.NetScopeGrpcServerBeanOverrider - NetScopeGrpcServerBeanOverrider: replaced 'netScopeGrpcServer' with CorrelationAwareNetScopeGrpcServer
+2026-03-06 19:08:34.846 [NO_CORR] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'fractalXRuntimeAutoConfiguration' of type [org.fractalx.runtime.FractalXRuntimeAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [netScopeGrpcInterceptorConfigurer] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2026-03-06 19:08:34.907 [NO_CORR] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'netScopeContextInterceptor' of type [org.fractalx.runtime.NetScopeContextInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [netScopeGrpcInterceptorConfigurer]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-03-06 19:08:36.030 [NO_CORR] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8085"]
+2026-03-06 19:08:36.040 [NO_CORR] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-06 19:08:36.041 [NO_CORR] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2026-03-06 19:08:36.300 [NO_CORR] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-03-06 19:08:38.489 [NO_CORR] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-06 19:08:38.973 [NO_CORR] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:department_service user=SA
+2026-03-06 19:08:38.975 [NO_CORR] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-06 19:08:39.151 [NO_CORR] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2026-03-06 19:08:39.153 [NO_CORR] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2026-03-06 19:08:39.155 [NO_CORR] INFO  o.f.c.i.license.VersionPrinter - 
+2026-03-06 19:08:39.262 [NO_CORR] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:h2:mem:department_service (H2 2.2)
+2026-03-06 19:08:39.267 [NO_CORR] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+2026-03-06 19:08:39.302 [NO_CORR] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
+2026-03-06 19:08:39.306 [NO_CORR] INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.023s)
+2026-03-06 19:08:39.317 [NO_CORR] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+2026-03-06 19:08:39.350 [NO_CORR] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "PUBLIC": << Empty Schema >>
+2026-03-06 19:08:39.358 [NO_CORR] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "PUBLIC" to version "1 - init"
+2026-03-06 19:08:39.379 [NO_CORR] INFO  o.f.core.internal.command.DbMigrate - Successfully applied 1 migration to schema "PUBLIC", now at version v1 (execution time 00:00.011s)
+2026-03-06 19:08:39.594 [NO_CORR] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-06 19:08:39.675 [NO_CORR] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
+2026-03-06 19:08:39.732 [NO_CORR] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-03-06 19:08:42.083 [NO_CORR] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-06 19:08:42.786 [NO_CORR] INFO  o.f.g.d.FractalRegistryClient - Registered with fractalx-registry: department-service at localhost:8085
+2026-03-06 19:08:44.405 [NO_CORR] INFO  o.f.n.s.c.NetScopeAutoConfiguration - NetScope Auto-Configuration initialized
+2026-03-06 19:08:44.460 [NO_CORR] DEBUG o.f.n.server.core.NetScopeInvoker - NetScope: Project Reactor not on classpath — reactive unwrapping disabled
+2026-03-06 19:08:44.469 [NO_CORR] DEBUG o.f.r.NetScopeObjectMapperConfigurer - NetScopeObjectMapperConfigurer: registered JavaTimeModule on NetScopeInvoker
+2026-03-06 19:08:44.477 [NO_CORR] WARN  o.f.n.s.s.OAuth2AuthorizationService - NetScope: Security DISABLED — all methods accessible without authentication
+2026-03-06 19:08:44.505 [NO_CORR] INFO  o.f.n.s.grpc.NetScopeGrpcServiceImpl - NetScope gRPC service initialized
+2026-03-06 19:08:45.004 [NO_CORR] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-06 19:08:45.596 [NO_CORR] INFO  o.f.n.c.c.NetScopeClientAutoConfiguration - NetScope Client Auto-Configuration initialized
+2026-03-06 19:08:48.823 [NO_CORR] DEBUG o.f.n.c.reactive.ReactiveSupport - NetScope client: Project Reactor not on classpath — reactive return types disabled
+2026-03-06 19:08:48.858 [NO_CORR] INFO  o.f.r.NetScopeGrpcInterceptorConfigurer - NetScopeGrpcInterceptorConfigurer: correlation ClientInterceptor wired into NetScopeChannelFactory
+2026-03-06 19:08:52.897 [NO_CORR] INFO  o.f.r.CorrelationAwareNetScopeGrpcServer - CorrelationAwareNetScopeGrpcServer started on port 18085 with correlation interceptor
+2026-03-06 19:08:53.018 [NO_CORR] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8085"]
+2026-03-06 19:08:53.084 [NO_CORR] INFO  o.f.g.d.DepartmentServiceApplication - Started DepartmentServiceApplication in 23.469 seconds (process running for 24.285)
+2026-03-06 19:08:56.763 [NO_CORR] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-06 19:16:25.098 [NO_CORR] DEBUG o.f.r.NetScopeContextInterceptor - NetScope: extracted correlationId=3064c85f-a1d2-4e2f-9145-64f0566b30c5 from gRPC metadata
+2026-03-06 19:16:25.100 [NO_CORR] DEBUG o.f.n.s.grpc.NetScopeAuthInterceptor - NetScope interceptor → auth=[absent] api_key=[absent]
+2026-03-06 19:16:25.130 [3064c85f-a1d2-4e2f-9145-64f0566b30c5] INFO  o.f.n.server.core.NetScopeScanner - NetScope: scanning for @NetworkPublic and @NetworkSecured members...
+2026-03-06 19:16:25.136 [3064c85f-a1d2-4e2f-9145-64f0566b30c5] INFO  o.f.n.server.core.NetScopeScanner -   [method] DepartmentService.exists(Long) → PUBLIC | auth=null | static=false | final=false
+2026-03-06 19:16:25.149 [3064c85f-a1d2-4e2f-9145-64f0566b30c5] INFO  o.f.n.server.core.NetScopeScanner -   [method] DepartmentService.cancelAssignToDepartment(Long,Long) → PUBLIC | auth=null | static=false | final=false
+2026-03-06 19:16:25.166 [3064c85f-a1d2-4e2f-9145-64f0566b30c5] INFO  o.f.n.server.core.NetScopeScanner -   [method] DepartmentService.cancelIncrementHeadcount(Long) → PUBLIC | auth=null | static=false | final=false
+2026-03-06 19:16:25.181 [3064c85f-a1d2-4e2f-9145-64f0566b30c5] INFO  o.f.n.server.core.NetScopeScanner -   [method] DepartmentService.findById(Long) → PUBLIC | auth=null | static=false | final=false
+2026-03-06 19:16:25.197 [3064c85f-a1d2-4e2f-9145-64f0566b30c5] INFO  o.f.n.server.core.NetScopeScanner -   [method] DepartmentService.incrementHeadcount(Long) → PUBLIC | auth=null | static=false | final=false
+2026-03-06 19:16:25.211 [3064c85f-a1d2-4e2f-9145-64f0566b30c5] INFO  o.f.n.server.core.NetScopeScanner -   [method] DepartmentService.assignToDepartment(Long,Long) → PUBLIC | auth=null | static=false | final=false
+2026-03-06 19:16:25.226 [3064c85f-a1d2-4e2f-9145-64f0566b30c5] INFO  o.f.n.server.core.NetScopeScanner -   [method] DepartmentService.findAllActive() → PUBLIC | auth=null | static=false | final=false
+2026-03-06 19:16:25.242 [3064c85f-a1d2-4e2f-9145-64f0566b30c5] INFO  o.f.n.server.core.NetScopeScanner -   [method] DepartmentService.createDepartment(String,String,BigDecimal) → PUBLIC | auth=null | static=false | final=false
+2026-03-06 19:16:25.345 [3064c85f-a1d2-4e2f-9145-64f0566b30c5] INFO  o.f.n.server.core.NetScopeScanner - NetScope: scan complete — 8 member(s) registered
+2026-03-06 19:16:25.473 [3064c85f-a1d2-4e2f-9145-64f0566b30c5] INFO  c.e.hr.department.DepartmentService - [dept] Assigning employee 1 to department 1
+2026-03-06 19:16:25.535 [3064c85f-a1d2-4e2f-9145-64f0566b30c5] ERROR o.f.n.s.grpc.NetScopeGrpcServiceImpl - Error invoking DepartmentService.assignToDepartment
+java.lang.reflect.InvocationTargetException: null
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:118)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.fractalx.netscope.server.core.NetScopeInvoker.invokeMethod(NetScopeInvoker.java:102)
+	at org.fractalx.netscope.server.core.NetScopeInvoker.invoke(NetScopeInvoker.java:53)
+	at org.fractalx.netscope.server.grpc.NetScopeGrpcServiceImpl.invokeMethod(NetScopeGrpcServiceImpl.java:93)
+	at org.fractalx.netscope.server.grpc.proto.NetScopeServiceGrpc$MethodHandlers.invoke(NetScopeServiceGrpc.java:440)
+	at io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:182)
+	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
+	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
+	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
+	at io.grpc.Contexts$ContextualizedServerCallListener.onHalfClose(Contexts.java:86)
+	at io.grpc.PartialForwardingServerCallListener.onHalfClose(PartialForwardingServerCallListener.java:35)
+	at io.grpc.ForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:23)
+	at io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener.onHalfClose(ForwardingServerCallListener.java:40)
+	at org.fractalx.runtime.NetScopeContextInterceptor$2.onHalfClose(NetScopeContextInterceptor.java:87)
+	at io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:356)
+	at io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:861)
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: jakarta.persistence.EntityNotFoundException: Department not found: 1
+	at com.example.hr.department.DepartmentService.lambda$requireDepartment$2(DepartmentService.java:123)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at com.example.hr.department.DepartmentService.requireDepartment(DepartmentService.java:123)
+	at com.example.hr.department.DepartmentService.assignToDepartment(DepartmentService.java:39)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:385)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717)
+	at com.example.hr.department.DepartmentService$$SpringCGLIB$$0.assignToDepartment(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	... 21 common frames omitted
