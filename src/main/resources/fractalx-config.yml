@@ -1,0 +1,182 @@
+# FractalX Decomposition Configuration
+#
+# Read by FractalX during `mvn fractalx:decompose`.
+# Merged into each generated service's application.yml.
+#
+# Sources:
+#   - Developer Guide  Section 8  (global + per-service structure)
+#   - Working POC config          (datasource / jpa / h2 / flyway pattern)
+#
+# Using file-based H2 so you can inspect each service's schema via H2 Console
+# at http://localhost:<port>/h2-console after starting the generated services.
+#
+# For production replace datasource blocks with:
+#   url: jdbc:postgresql://localhost:5432/<db_name>
+#   driver-class-name: org.postgresql.Driver
+#   username: <user>
+#   password: <secret>
+
+fractalx:
+
+  # ── Global infrastructure endpoints ────────────────────────────────────────
+
+  # Where Jaeger / OTel collector is running (used by all generated services)
+  otel:
+    endpoint: http://localhost:4317
+
+  # Where the logger-service is running
+  logger:
+    url: http://localhost:9099
+
+  # Where the service registry is running
+  registry:
+    url: http://localhost:8761
+
+  # API Gateway settings
+  gateway:
+    port: 9999
+    cors:
+      allowed-origins: "http://localhost:3000,http://localhost:4200"
+
+  # Admin UI service
+  admin:
+    port: 9090
+
+  # ── Per-service configuration ───────────────────────────────────────────────
+  # port       — overrides the port set in @DecomposableModule
+  # datasource — H2 file-based db per service (each service gets its own db)
+  # jpa        — JPA/Hibernate settings merged into generated application.yml
+  # h2         — enables H2 console for dev inspection
+  # flyway     — enables Flyway migration scaffolding
+  # tracing    — set enabled: false to disable OTel for a specific service
+
+  services:
+
+    employee-service:
+      port: 8081
+      datasource:
+        url: jdbc:h2:file:./data/employee-db;DB_CLOSE_DELAY=-1;AUTO_SERVER=TRUE
+        driver-class-name: org.h2.Driver
+        username: sa
+        password: ""
+      jpa:
+        show-sql: true
+        hibernate:
+          ddl-auto: update
+      h2:
+        console:
+          enabled: true
+      flyway:
+        enabled: true
+      tracing:
+        enabled: true
+
+    payroll-service:
+      port: 8082
+      datasource:
+        url: jdbc:h2:file:./data/payroll-db;DB_CLOSE_DELAY=-1;AUTO_SERVER=TRUE
+        driver-class-name: org.h2.Driver
+        username: sa
+        password: ""
+      jpa:
+        show-sql: true
+        hibernate:
+          ddl-auto: update
+      h2:
+        console:
+          enabled: true
+      flyway:
+        enabled: true
+      tracing:
+        enabled: true
+
+    leave-service:
+      port: 8083
+      datasource:
+        url: jdbc:h2:file:./data/leave-db;DB_CLOSE_DELAY=-1;AUTO_SERVER=TRUE
+        driver-class-name: org.h2.Driver
+        username: sa
+        password: ""
+      jpa:
+        show-sql: true
+        hibernate:
+          ddl-auto: update
+      h2:
+        console:
+          enabled: true
+      flyway:
+        enabled: true
+      tracing:
+        enabled: true
+
+    recruitment-service:
+      port: 8084
+      datasource:
+        url: jdbc:h2:file:./data/recruitment-db;DB_CLOSE_DELAY=-1;AUTO_SERVER=TRUE
+        driver-class-name: org.h2.Driver
+        username: sa
+        password: ""
+      jpa:
+        show-sql: true
+        hibernate:
+          ddl-auto: update
+      h2:
+        console:
+          enabled: true
+      flyway:
+        enabled: true
+      tracing:
+        enabled: true
+
+    department-service:
+      port: 8085
+      datasource:
+        url: jdbc:h2:file:./data/department-db;DB_CLOSE_DELAY=-1;AUTO_SERVER=TRUE
+        driver-class-name: org.h2.Driver
+        username: sa
+        password: ""
+      jpa:
+        show-sql: true
+        hibernate:
+          ddl-auto: update
+      h2:
+        console:
+          enabled: true
+      flyway:
+        enabled: true
+      tracing:
+        enabled: true
+
+    # ── Infrastructure services (from working POC) ────────────────────────────
+
+    fractalx-saga-orchestrator:
+      datasource:
+        url: jdbc:h2:file:./data/saga-db;DB_CLOSE_DELAY=-1;AUTO_SERVER=TRUE
+        driver-class-name: org.h2.Driver
+        username: sa
+        password: ""
+      jpa:
+        show-sql: true
+        hibernate:
+          ddl-auto: update
+      h2:
+        console:
+          enabled: true
+      flyway:
+        enabled: true
+
+    admin-service:
+      datasource:
+        url: jdbc:h2:file:./data/admin-db;DB_CLOSE_DELAY=-1;AUTO_SERVER=TRUE
+        driver-class-name: org.h2.Driver
+        username: sa
+        password: ""
+      jpa:
+        show-sql: true
+        hibernate:
+          ddl-auto: update
+      h2:
+        console:
+          enabled: true
+      flyway:
+        enabled: true
