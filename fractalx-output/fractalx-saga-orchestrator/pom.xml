@@ -47,7 +47,7 @@
         <dependency>
             <groupId>org.fractalx</groupId>
             <artifactId>fractalx-runtime</artifactId>
-            <version>0.2.0-SNAPSHOT</version>
+            <version>0.2.3</version>
         </dependency>
         <dependency>
             <groupId>com.h2database</groupId>

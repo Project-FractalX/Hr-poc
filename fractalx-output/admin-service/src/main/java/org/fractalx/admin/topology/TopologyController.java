@@ -47,6 +47,8 @@ public class TopologyController {
         summary.put("recruitment-service", checkHealth("recruitment-service", 8084, "/actuator/health"));
         summary.put("fractalx-registry", checkHealth("fractalx-registry", 8761, "/services/health"));
         summary.put("fractalx-gateway",  checkHealth("fractalx-gateway",  9999, "/actuator/health"));
+        summary.put("admin-service",     "UP"); // self — always reachable if this endpoint is responding
+        summary.put("logger-service",    checkHealth("logger-service", 9099, "/actuator/health"));
 
         return ResponseEntity.ok(summary);
     }
