@@ -1,0 +1,15 @@
+com\example\hr\department\Department.class
+org\fractalx\generated\departmentservice\config\IsolationConfig.class
+org\fractalx\generated\departmentservice\FractalRegistryClient.class
+org\fractalx\generated\departmentservice\OtelConfig.class
+org\fractalx\generated\departmentservice\CorrelationTracingConfig$1.class
+org\fractalx\generated\departmentservice\TracingExclusionConfig.class
+org\fractalx\generated\departmentservice\CorrelationTracingConfig.class
+org\fractalx\generated\departmentservice\ServiceRegistrationAutoConfig.class
+com\example\hr\department\dto\CreateDepartmentRequest.class
+com\example\hr\department\DepartmentService.class
+com\example\hr\department\DepartmentModule.class
+com\example\hr\department\dto\DepartmentResponse.class
+org\fractalx\generated\departmentservice\DepartmentServiceApplication.class
+com\example\hr\department\DepartmentRepository.class
+com\example\hr\department\DepartmentController.class

@@ -1,0 +1,14 @@
+com\example\hr\payroll\dto\PayrollResponse.class
+org\fractalx\generated\payrollservice\OtelConfig.class
+com\example\hr\payroll\PayrollModule.class
+com\example\hr\payroll\PayrollRecord.class
+org\fractalx\generated\payrollservice\CorrelationTracingConfig.class
+org\fractalx\generated\payrollservice\CorrelationTracingConfig$1.class
+com\example\hr\payroll\PayrollService.class
+org\fractalx\generated\payrollservice\FractalRegistryClient.class
+org\fractalx\generated\payrollservice\ServiceRegistrationAutoConfig.class
+org\fractalx\generated\payrollservice\config\IsolationConfig.class
+com\example\hr\payroll\PayrollRepository.class
+com\example\hr\payroll\PayrollController.class
+org\fractalx\generated\payrollservice\PayrollServiceApplication.class
+org\fractalx\generated\payrollservice\TracingExclusionConfig.class

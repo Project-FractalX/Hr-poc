@@ -1,0 +1,4 @@
+org\fractalx\logger\LogEntry.class
+org\fractalx\logger\LogController.class
+org\fractalx\logger\LogRepository.class
+org\fractalx\logger\LoggerApplication.class

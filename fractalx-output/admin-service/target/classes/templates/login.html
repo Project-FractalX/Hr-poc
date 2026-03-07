@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FractalX Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/webjars/font-awesome/6.4.0/css/all.min.css}">
+    <style>
+        *,*::before,*::after{box-sizing:border-box}
+        body{margin:0;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+             background:#f9fafb;min-height:100vh;display:flex;align-items:center;
+             justify-content:center;color:#111827;-webkit-font-smoothing:antialiased}
+        .wrap{width:100%;max-width:400px;padding:20px}
+        .card{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:40px 36px}
+        .logo{display:flex;align-items:center;gap:10px;margin-bottom:28px}
+        .logo-icon{width:32px;height:32px;background:#111827;border-radius:7px;
+                   display:flex;align-items:center;justify-content:center;
+                   color:#fff;font-size:13px;flex-shrink:0}
+        .logo-name{font-size:15px;font-weight:600;color:#111827}
+        h2{margin:0 0 6px;font-size:22px;font-weight:600;color:#111827}
+        .sub{margin:0 0 28px;font-size:13px;color:#6b7280}
+        label{display:block;font-size:13px;font-weight:500;color:#374151;margin-bottom:6px}
+        input{width:100%;padding:9px 12px;font-size:14px;font-family:inherit;
+              border:1px solid #d1d5db;border-radius:7px;color:#111827;background:#fff;
+              outline:none;transition:border-color .15s,box-shadow .15s}
+        input:focus{border-color:#111827;box-shadow:0 0 0 3px rgba(17,24,39,.08)}
+        .mb4{margin-bottom:18px}.mb5{margin-bottom:24px}
+        .btn-submit{width:100%;padding:10px;background:#111827;color:#fff;border:none;
+                    border-radius:7px;font-size:14px;font-weight:500;font-family:inherit;
+                    cursor:pointer;transition:background .15s}
+        .btn-submit:hover{background:#1f2937}
+        .alert-err{background:#fef2f2;border:1px solid #fecaca;color:#dc2626;
+                   font-size:13px;padding:10px 12px;border-radius:7px;margin-bottom:16px}
+        .alert-ok{background:#f0fdf4;border:1px solid #bbf7d0;color:#15803d;
+                  font-size:13px;padding:10px 12px;border-radius:7px;margin-bottom:16px}
+        .footer{text-align:center;margin-top:20px;font-size:12px;color:#9ca3af}
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="card">
+            <div class="logo">
+                <div class="logo-icon"><svg width="16" height="17" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2.1054" y="4.60606" width="7.69016" height="4.57289" transform="rotate(27.4135 2.1054 4.60606)" fill="white"/><rect x="2.1054" width="14.9697" height="4.60606" fill="white"/><rect x="6.82661" y="7.6" width="10.2485" height="4.60606" fill="white"/><rect x="6.82661" y="12.2061" width="6.79394" height="4.72121" transform="rotate(90 6.82661 12.2061)" fill="white"/></svg></div>
+                <span class="logo-name">FractalX</span>
+            </div>
+            <h2>Sign in</h2>
+            <p class="sub">Access your microservices dashboard</p>
+            <div th:if="${param.error}" class="alert-err">
+                <i class="fas fa-exclamation-circle"></i>&nbsp;Invalid username or password.
+            </div>
+            <div th:if="${param.logout}" class="alert-ok">
+                <i class="fas fa-check-circle"></i>&nbsp;You have been signed out.
+            </div>
+            <form th:action="@{/login}" method="post">
+                <div class="mb4">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="admin" autofocus required>
+                </div>
+                <div class="mb5">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn-submit">
+                    Sign in &nbsp;<i class="fas fa-arrow-right" style="font-size:11px"></i>
+                </button>
+            </form>
+        </div>
+        <div class="footer">FractalX v" + FractalxVersion.release() + " &mdash; Microservices Framework</div>
+    </div>
+</body>
+</html>

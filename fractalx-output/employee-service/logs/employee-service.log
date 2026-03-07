@@ -1,0 +1,64 @@
+2026-03-07 09:14:30.742 [NO_CORR] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-03-07 09:14:30.924 [NO_CORR] INFO  o.f.g.e.EmployeeServiceApplication - Starting EmployeeServiceApplication using Java 23.0.2 with PID 3056 (C:\Research\Hr-poc\fractalx-output\employee-service\target\classes started by gayas in C:\Research\Hr-poc\fractalx-output\employee-service)
+2026-03-07 09:14:30.924 [NO_CORR] DEBUG o.f.g.e.EmployeeServiceApplication - Running with Spring Boot v3.2.0, Spring v6.1.1
+2026-03-07 09:14:30.924 [NO_CORR] INFO  o.f.g.e.EmployeeServiceApplication - The following 1 profile is active: "dev"
+2026-03-07 09:14:33.016 [NO_CORR] DEBUG o.f.n.c.c.NetScopeClientRegistrar - NetScope client: scanning packages [org.fractalx.generated.employeeservice, com.example.hr, org.fractalx.runtime] for @NetScopeClient interfaces
+2026-03-07 09:14:33.026 [NO_CORR] DEBUG o.f.n.c.c.NetScopeClientRegistrar$1 - Identified candidate component class: file [C:\Research\Hr-poc\fractalx-output\employee-service\target\classes\org\fractalx\generated\employeeservice\validation\AggregateExistsClient.class]
+2026-03-07 09:14:33.026 [NO_CORR] DEBUG o.f.n.c.c.NetScopeClientRegistrar$1 - Identified candidate component class: file [C:\Research\Hr-poc\fractalx-output\employee-service\target\classes\org\fractalx\generated\employeeservice\validation\CorrelationExistsClient.class]
+2026-03-07 09:14:33.036 [NO_CORR] DEBUG o.f.n.c.c.NetScopeClientRegistrar - NetScope client: registering proxy bean 'aggregateExistsClient' for org.fractalx.generated.employeeservice.validation.AggregateExistsClient
+2026-03-07 09:14:33.036 [NO_CORR] DEBUG o.f.n.c.c.NetScopeClientRegistrar - NetScope client: registering proxy bean 'correlationExistsClient' for org.fractalx.generated.employeeservice.validation.CorrelationExistsClient
+2026-03-07 09:14:33.044 [NO_CORR] DEBUG o.f.n.c.c.NetScopeClientRegistrar$1 - Identified candidate component class: file [C:\Research\Hr-poc\fractalx-output\employee-service\target\classes\com\example\hr\employee\DepartmentServiceClient.class]
+2026-03-07 09:14:33.047 [NO_CORR] DEBUG o.f.n.c.c.NetScopeClientRegistrar$1 - Identified candidate component class: file [C:\Research\Hr-poc\fractalx-output\employee-service\target\classes\com\example\hr\employee\PayrollServiceClient.class]
+2026-03-07 09:14:33.047 [NO_CORR] DEBUG o.f.n.c.c.NetScopeClientRegistrar - NetScope client: registering proxy bean 'departmentServiceClient' for com.example.hr.employee.DepartmentServiceClient
+2026-03-07 09:14:33.055 [NO_CORR] DEBUG o.f.n.c.c.NetScopeClientRegistrar - NetScope client: registering proxy bean 'payrollServiceClient' for com.example.hr.employee.PayrollServiceClient
+2026-03-07 09:14:35.294 [NO_CORR] INFO  o.f.r.NetScopeGrpcServerBeanOverrider - NetScopeGrpcServerBeanOverrider: replaced 'netScopeGrpcServer' with CorrelationAwareNetScopeGrpcServer
+2026-03-07 09:14:36.133 [NO_CORR] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'fractalXRuntimeAutoConfiguration' of type [org.fractalx.runtime.FractalXRuntimeAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [netScopeGrpcInterceptorConfigurer] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2026-03-07 09:14:36.184 [NO_CORR] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'netScopeContextInterceptor' of type [org.fractalx.runtime.NetScopeContextInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [netScopeGrpcInterceptorConfigurer]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2026-03-07 09:14:39.695 [NO_CORR] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-03-07 09:14:39.705 [NO_CORR] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-07 09:14:39.745 [NO_CORR] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2026-03-07 09:14:40.029 [NO_CORR] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-03-07 09:14:43.559 [NO_CORR] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-07 09:14:45.702 [NO_CORR] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:employee_service user=SA
+2026-03-07 09:14:45.730 [NO_CORR] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-07 09:14:45.945 [NO_CORR] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2026-03-07 09:14:45.975 [NO_CORR] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2026-03-07 09:14:46.024 [NO_CORR] INFO  o.f.c.i.license.VersionPrinter - 
+2026-03-07 09:14:46.127 [NO_CORR] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:h2:mem:employee_service (H2 2.2)
+2026-03-07 09:14:46.147 [NO_CORR] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+2026-03-07 09:14:46.218 [NO_CORR] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
+2026-03-07 09:14:46.279 [NO_CORR] INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.108s)
+2026-03-07 09:14:46.319 [NO_CORR] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+2026-03-07 09:14:46.380 [NO_CORR] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "PUBLIC": << Empty Schema >>
+2026-03-07 09:14:46.420 [NO_CORR] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "PUBLIC" to version "1 - init"
+2026-03-07 09:14:46.461 [NO_CORR] INFO  o.f.core.internal.command.DbMigrate - Successfully applied 1 migration to schema "PUBLIC", now at version v1 (execution time 00:00.025s)
+2026-03-07 09:14:46.887 [NO_CORR] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-07 09:14:47.089 [NO_CORR] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
+2026-03-07 09:14:47.180 [NO_CORR] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-03-07 09:14:51.096 [NO_CORR] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-07 09:14:51.814 [NO_CORR] WARN  o.f.g.e.NetScopeRegistryBridge - Registry lookup for department-service failed (attempt 1/5): I/O error on GET request for "http://localhost:8761/services/department-service": Connection refused: connect
+2026-03-07 09:14:53.926 [NO_CORR] WARN  o.f.g.e.NetScopeRegistryBridge - Registry lookup for department-service failed (attempt 2/5): I/O error on GET request for "http://localhost:8761/services/department-service": Connection refused: connect
+2026-03-07 09:14:58.005 [NO_CORR] WARN  o.f.g.e.NetScopeRegistryBridge - Registry lookup for department-service failed (attempt 3/5): I/O error on GET request for "http://localhost:8761/services/department-service": Connection refused: connect
+2026-03-07 09:15:04.042 [NO_CORR] WARN  o.f.g.e.NetScopeRegistryBridge - Registry lookup for department-service failed (attempt 4/5): I/O error on GET request for "http://localhost:8761/services/department-service": Connection refused: connect
+2026-03-07 09:15:12.125 [NO_CORR] WARN  o.f.g.e.NetScopeRegistryBridge - Registry lookup for department-service failed (attempt 5/5): I/O error on GET request for "http://localhost:8761/services/department-service": Connection refused: connect
+2026-03-07 09:15:22.293 [NO_CORR] WARN  o.f.g.e.NetScopeRegistryBridge - Could not resolve department-service from registry — using static YAML fallback
+2026-03-07 09:15:23.210 [NO_CORR] WARN  o.f.g.e.NetScopeRegistryBridge - Registry lookup for payroll-service failed (attempt 1/5): 404 : [no body]
+2026-03-07 09:15:25.275 [NO_CORR] WARN  o.f.g.e.NetScopeRegistryBridge - Registry lookup for payroll-service failed (attempt 2/5): 404 : [no body]
+2026-03-07 09:15:29.431 [NO_CORR] WARN  o.f.g.e.NetScopeRegistryBridge - Registry lookup for payroll-service failed (attempt 3/5): 404 : [no body]
+2026-03-07 09:15:35.640 [NO_CORR] WARN  o.f.g.e.NetScopeRegistryBridge - Registry lookup for payroll-service failed (attempt 4/5): 404 : [no body]
+2026-03-07 09:15:43.801 [NO_CORR] WARN  o.f.g.e.NetScopeRegistryBridge - Registry lookup for payroll-service failed (attempt 5/5): 404 : [no body]
+2026-03-07 09:15:53.922 [NO_CORR] WARN  o.f.g.e.NetScopeRegistryBridge - Could not resolve payroll-service from registry — using static YAML fallback
+2026-03-07 09:15:56.669 [NO_CORR] INFO  o.f.n.c.c.NetScopeClientAutoConfiguration - NetScope Client Auto-Configuration initialized
+2026-03-07 09:15:57.703 [NO_CORR] INFO  o.f.g.e.FractalRegistryClient - Registered with fractalx-registry: employee-service at localhost:8081
+2026-03-07 09:15:57.784 [NO_CORR] INFO  o.f.r.NetScopeGrpcInterceptorConfigurer - NetScopeGrpcInterceptorConfigurer: correlation ClientInterceptor wired into NetScopeChannelFactory
+2026-03-07 09:15:57.837 [NO_CORR] DEBUG o.f.n.c.reactive.ReactiveSupport - NetScope client: Project Reactor not on classpath — reactive return types disabled
+2026-03-07 09:15:59.093 [NO_CORR] INFO  o.f.n.s.c.NetScopeAutoConfiguration - NetScope Auto-Configuration initialized
+2026-03-07 09:15:59.153 [NO_CORR] DEBUG o.f.n.server.core.NetScopeInvoker - NetScope: Project Reactor not on classpath — reactive unwrapping disabled
+2026-03-07 09:15:59.177 [NO_CORR] DEBUG o.f.r.NetScopeObjectMapperConfigurer - NetScopeObjectMapperConfigurer: registered JavaTimeModule on NetScopeInvoker
+2026-03-07 09:15:59.238 [NO_CORR] WARN  o.f.n.s.s.OAuth2AuthorizationService - NetScope: Security DISABLED — all methods accessible without authentication
+2026-03-07 09:15:59.263 [NO_CORR] INFO  o.f.n.s.grpc.NetScopeGrpcServiceImpl - NetScope gRPC service initialized
+2026-03-07 09:16:00.463 [NO_CORR] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-07 09:16:11.761 [NO_CORR] INFO  o.f.r.CorrelationAwareNetScopeGrpcServer - CorrelationAwareNetScopeGrpcServer started on port 18081 with correlation interceptor
+2026-03-07 09:16:12.571 [NO_CORR] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-03-07 09:16:12.670 [NO_CORR] INFO  o.f.g.e.EmployeeServiceApplication - Started EmployeeServiceApplication in 103.969 seconds (process running for 106.236)
+2026-03-07 09:16:14.554 [NO_CORR] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
