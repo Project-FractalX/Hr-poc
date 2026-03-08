@@ -3,12 +3,44 @@
 # Read by FractalX during `mvn fractalx:decompose`.
 # Merged into each generated service's application.yml.
 #
-# Sources:
-#   - Developer Guide  Section 8  (global + per-service structure)
-#   - Working POC config          (datasource / jpa / h2 / flyway pattern)
+# H2 Console access
+# ─────────────────
+# Using NAMED IN-MEMORY H2 databases (jdbc:h2:mem:<n>).
+# Reasons for switching away from file-based (jdbc:h2:file:./data/...):
 #
-# Using file-based H2 so you can inspect each service's schema via H2 Console
-# at http://localhost:<port>/h2-console after starting the generated services.
+#   PROBLEM 1 — H2 2.x error 90149:
+#     H2 2.x blocks creating a new database from the browser console.
+#     File databases can only be created by the app on first boot,
+#     not from the console UI.
+#
+#   PROBLEM 2 — Relative path mismatch:
+#     ./data/ resolves relative to where the JVM launched (the service folder).
+#     When you open the H2 console in your browser it resolves to something
+#     completely different (usually your OS user home), so it never finds the file.
+#
+#   PROBLEM 3 — File does not exist yet:
+#     Even with the correct absolute path, the console fails if you open it
+#     before the app has booted at least once.
+#
+# HOW TO CONNECT TO H2 CONSOLE FOR EACH SERVICE:
+#   1. Start the service first  (mvn spring-boot:run inside its folder)
+#   2. Open  http://localhost:<port>/h2-console  in your browser
+#   3. Paste the JDBC URL from the table below — exactly as shown
+#   4. User Name: sa   |   Password: (leave empty)   |   Click Connect
+#
+#   Service              Port   Paste this JDBC URL
+#   ─────────────────────────────────────────────────────────────────────────
+#   employee-service     8081   jdbc:h2:mem:employee_service
+#   payroll-service      8082   jdbc:h2:mem:payroll_service
+#   leave-service        8083   jdbc:h2:mem:leave_service
+#   recruitment-service  8084   jdbc:h2:mem:recruitment_service
+#   department-service   8085   jdbc:h2:mem:department_service
+#   saga-orchestrator    8099   jdbc:h2:mem:saga_db
+#   admin-service        9090   jdbc:h2:mem:admin_db
+#
+# NOTE: In-memory means data resets on service restart. This is expected in dev.
+# DB_CLOSE_DELAY=-1 keeps the database alive for the full JVM lifetime so
+# the H2 console stays connected while the service is running.
 #
 # For production replace datasource blocks with:
 #   url: jdbc:postgresql://localhost:5432/<db_name>
@@ -44,18 +76,19 @@ fractalx:
 
   # ── Per-service configuration ───────────────────────────────────────────────
   # port       — overrides the port set in @DecomposableModule
-  # datasource — H2 file-based db per service (each service gets its own db)
+  # datasource — named in-memory H2 per service (survives JVM lifetime, not restarts)
   # jpa        — JPA/Hibernate settings merged into generated application.yml
-  # h2         — enables H2 console for dev inspection
+  # h2         — enables H2 Console at http://localhost:<port>/h2-console
   # flyway     — enables Flyway migration scaffolding
   # tracing    — set enabled: false to disable OTel for a specific service
 
   services:
 
+    # H2 Console: http://localhost:8081/h2-console  ->  jdbc:h2:mem:employee_service
     employee-service:
       port: 8081
       datasource:
-        url: jdbc:h2:file:./data/employee-db;DB_CLOSE_DELAY=-1;AUTO_SERVER=TRUE
+        url: jdbc:h2:mem:employee_service;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
         driver-class-name: org.h2.Driver
         username: sa
         password: ""
@@ -71,10 +104,11 @@ fractalx:
       tracing:
         enabled: true
 
+    # H2 Console: http://localhost:8082/h2-console  ->  jdbc:h2:mem:payroll_service
     payroll-service:
       port: 8082
       datasource:
-        url: jdbc:h2:file:./data/payroll-db;DB_CLOSE_DELAY=-1;AUTO_SERVER=TRUE
+        url: jdbc:h2:mem:payroll_service;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
         driver-class-name: org.h2.Driver
         username: sa
         password: ""
@@ -90,10 +124,11 @@ fractalx:
       tracing:
         enabled: true
 
+    # H2 Console: http://localhost:8083/h2-console  ->  jdbc:h2:mem:leave_service
     leave-service:
       port: 8083
       datasource:
-        url: jdbc:h2:file:./data/leave-db;DB_CLOSE_DELAY=-1;AUTO_SERVER=TRUE
+        url: jdbc:h2:mem:leave_service;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
         driver-class-name: org.h2.Driver
         username: sa
         password: ""
@@ -109,10 +144,11 @@ fractalx:
       tracing:
         enabled: true
 
+    # H2 Console: http://localhost:8084/h2-console  ->  jdbc:h2:mem:recruitment_service
     recruitment-service:
       port: 8084
       datasource:
-        url: jdbc:h2:file:./data/recruitment-db;DB_CLOSE_DELAY=-1;AUTO_SERVER=TRUE
+        url: jdbc:h2:mem:recruitment_service;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
         driver-class-name: org.h2.Driver
         username: sa
         password: ""
@@ -128,10 +164,11 @@ fractalx:
       tracing:
         enabled: true
 
+    # H2 Console: http://localhost:8085/h2-console  ->  jdbc:h2:mem:department_service
     department-service:
       port: 8085
       datasource:
-        url: jdbc:h2:file:./data/department-db;DB_CLOSE_DELAY=-1;AUTO_SERVER=TRUE
+        url: jdbc:h2:mem:department_service;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
         driver-class-name: org.h2.Driver
         username: sa
         password: ""
@@ -147,11 +184,12 @@ fractalx:
       tracing:
         enabled: true
 
-    # ── Infrastructure services (from working POC) ────────────────────────────
+    # ── Infrastructure services ─────────────────────────────────────────────────
 
+    # H2 Console: http://localhost:8099/h2-console  ->  jdbc:h2:mem:saga_db
     fractalx-saga-orchestrator:
       datasource:
-        url: jdbc:h2:file:./data/saga-db;DB_CLOSE_DELAY=-1;AUTO_SERVER=TRUE
+        url: jdbc:h2:mem:saga_db;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
         driver-class-name: org.h2.Driver
         username: sa
         password: ""
@@ -165,9 +203,10 @@ fractalx:
       flyway:
         enabled: true
 
+    # H2 Console: http://localhost:9090/h2-console  ->  jdbc:h2:mem:admin_db
     admin-service:
       datasource:
-        url: jdbc:h2:file:./data/admin-db;DB_CLOSE_DELAY=-1;AUTO_SERVER=TRUE
+        url: jdbc:h2:mem:admin_db;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
         driver-class-name: org.h2.Driver
         username: sa
         password: ""
