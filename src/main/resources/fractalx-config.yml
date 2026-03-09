@@ -88,17 +88,21 @@ fractalx:
     employee-service:
       port: 8081
       datasource:
-        url: jdbc:h2:mem:employee_service;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
-        driver-class-name: org.h2.Driver
-        username: sa
-        password: ""
+#        url: jdbc:h2:mem:employee_service;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+#        driver-class-name: org.h2.Driver
+#        username: sa
+#        password: ""
+        url: jdbc:postgresql://20.204.50.224:5432/employee_service?sslmode=require
+        driver-class-name: org.postgresql.Driver
+        username: postgres
+        password: wow123
       jpa:
         show-sql: true
         hibernate:
           ddl-auto: update
-      h2:
-        console:
-          enabled: true
+#      h2:
+#        console:
+#          enabled: true
       flyway:
         enabled: true
       tracing:
@@ -108,17 +112,21 @@ fractalx:
     payroll-service:
       port: 8082
       datasource:
-        url: jdbc:h2:mem:payroll_service;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
-        driver-class-name: org.h2.Driver
-        username: sa
-        password: ""
+#        url: jdbc:h2:mem:payroll_service;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+#        driver-class-name: org.h2.Driver
+#        username: sa
+#        password: ""
+        url: jdbc:postgresql://20.204.50.224:5432/payroll_service?sslmode=require
+        driver-class-name: org.postgresql.Driver
+        username: postgres
+        password: wow123
       jpa:
         show-sql: true
         hibernate:
           ddl-auto: update
-      h2:
-        console:
-          enabled: true
+#      h2:
+#        console:
+#          enabled: true
       flyway:
         enabled: true
       tracing:
@@ -128,17 +136,21 @@ fractalx:
     leave-service:
       port: 8083
       datasource:
-        url: jdbc:h2:mem:leave_service;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
-        driver-class-name: org.h2.Driver
-        username: sa
-        password: ""
+#        url: jdbc:h2:mem:leave_service;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+#        driver-class-name: org.h2.Driver
+#        username: sa
+#        password: ""
+        url: jdbc:postgresql://20.204.50.224:5432/leave_service?sslmode=require
+        driver-class-name: org.postgresql.Driver
+        username: postgres
+        password: wow123
       jpa:
         show-sql: true
         hibernate:
           ddl-auto: update
-      h2:
-        console:
-          enabled: true
+#      h2:
+#        console:
+#          enabled: true
       flyway:
         enabled: true
       tracing:
@@ -148,17 +160,21 @@ fractalx:
     recruitment-service:
       port: 8084
       datasource:
-        url: jdbc:h2:mem:recruitment_service;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
-        driver-class-name: org.h2.Driver
-        username: sa
-        password: ""
+#        url: jdbc:h2:mem:recruitment_service;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+#        driver-class-name: org.h2.Driver
+#        username: sa
+#        password: ""
+        url: jdbc:postgresql://20.204.50.224:5432/recruitment_service?sslmode=require
+        driver-class-name: org.postgresql.Driver
+        username: postgres
+        password: wow123
       jpa:
         show-sql: true
         hibernate:
           ddl-auto: update
-      h2:
-        console:
-          enabled: true
+#      h2:
+#        console:
+#          enabled: true
       flyway:
         enabled: true
       tracing:
@@ -168,17 +184,21 @@ fractalx:
     department-service:
       port: 8085
       datasource:
-        url: jdbc:h2:mem:department_service;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
-        driver-class-name: org.h2.Driver
-        username: sa
-        password: ""
+#        url: jdbc:h2:mem:department_service;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+#        driver-class-name: org.h2.Driver
+#        username: sa
+#        password: ""
+        url: jdbc:postgresql://20.204.50.224:5432/department_service?sslmode=require
+        driver-class-name: org.postgresql.Driver
+        username: postgres
+        password: wow123
       jpa:
         show-sql: true
         hibernate:
           ddl-auto: update
-      h2:
-        console:
-          enabled: true
+#      h2:
+#        console:
+#          enabled: true
       flyway:
         enabled: true
       tracing:
@@ -189,17 +209,21 @@ fractalx:
     # H2 Console: http://localhost:8099/h2-console  ->  jdbc:h2:mem:saga_db
     fractalx-saga-orchestrator:
       datasource:
-        url: jdbc:h2:mem:saga_db;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
-        driver-class-name: org.h2.Driver
-        username: sa
-        password: ""
+#        url: jdbc:h2:mem:saga_db;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+#        driver-class-name: org.h2.Driver
+#        username: sa
+#        password: ""
+        url: jdbc:postgresql://20.204.50.224:5432/saga_service?sslmode=require
+        driver-class-name: org.postgresql.Driver
+        username: postgres
+        password: wow123
       jpa:
         show-sql: true
         hibernate:
           ddl-auto: update
-      h2:
-        console:
-          enabled: true
+#      h2:
+#        console:
+#          enabled: true
       flyway:
         enabled: true
 
