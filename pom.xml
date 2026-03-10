@@ -45,7 +45,7 @@
         <dependency>
             <groupId>org.fractalx</groupId>
             <artifactId>fractalx-annotations</artifactId>
-            <version>0.2.3</version>
+            <version>0.2.5</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -74,7 +74,7 @@
             <plugin>
                 <groupId>org.fractalx</groupId>
                 <artifactId>fractalx-maven-plugin</artifactId>
-                <version>0.2.3</version>
+                <version>0.2.5</version>
             </plugin>
         </plugins>
     </build>
