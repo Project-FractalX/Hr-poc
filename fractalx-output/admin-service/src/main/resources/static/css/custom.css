@@ -1,7 +1,0 @@
-/* Custom styles for FractalX Admin */
-.stat-card {
-    transition: all 0.3s ease;
-}
-.stat-card:hover {
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-}
