@@ -87,7 +87,9 @@ public class EmployeeModule {
         compensationMethod = "cancelOnboardEmployee",
         timeout            = 30_000,
         steps              = {"setupPayroll", "assignToDepartment"},
-        description        = "Onboards a new employee: sets up payroll and assigns to department."
+        description        = "Onboards a new employee: sets up payroll and assigns to department.",
+        successStatus      = "ACTIVE",
+        failureStatus      = "CANCELLED"
     )
     @Transactional
     public Employee onboardEmployee(String firstName, String lastName, String email,

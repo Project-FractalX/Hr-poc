@@ -76,7 +76,9 @@ public class LeaveModule {
         compensationMethod = "cancelApproveLeave",
         timeout            = 30_000,
         steps              = {"markOnLeave", "deductLeave"},
-        description        = "Approves employee leave: marks employee on leave and deducts pay."
+        description        = "Approves employee leave: marks employee on leave and deducts pay.",
+        successStatus      = "APPROVED",
+        failureStatus      = "CANCELLED"
     )
     @Transactional
     public LeaveEntry approveLeave(Long employeeId, String leaveType,

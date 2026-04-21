@@ -81,7 +81,9 @@ public class RecruitmentModule {
         compensationMethod = "cancelHireEmployee",
         timeout            = 30_000,
         steps              = {"createEmployee", "incrementHeadcount"},
-        description        = "Hires a candidate: creates employee record and updates department headcount."
+        description        = "Hires a candidate: creates employee record and updates department headcount.",
+        successStatus      = "HIRED",
+        failureStatus      = "CANCELLED"
     )
     @Transactional
     public Candidate hireEmployee(Long candidateId, String firstName, String lastName,

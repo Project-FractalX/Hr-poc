@@ -7,10 +7,14 @@ spring:
 #    driver-class-name: org.h2.Driver
 #    username: sa
 #    password:
-    url: jdbc:postgresql://20.204.50.224:5432/hr_db?sslmode=require
-    driver-class-name: org.postgresql.Driver
-    username: postgres
-    password: wow123
+#    url: jdbc:postgresql://20.204.50.224:5432/hr_db?sslmode=require
+#    driver-class-name: org.postgresql.Driver
+#    username: postgres
+#    password: wow123
+    url: jdbc:mysql://localhost:3306/hr_db?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: "1234"
 
   jpa:
     hibernate:
