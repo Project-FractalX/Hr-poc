@@ -84,8 +84,8 @@ public class PayrollService {
      * @param leaveDays  number of working days of leave approved
      */
     @Transactional
-    public void deductLeave(Long employeeId, Integer leaveDays) {
-        log.info("[payroll] Deducting {} leave days for employee {}", leaveDays, employeeId);
+    public void deductLeave(Long employeeId, Integer leaveDays, Long leaveId) {
+        log.info("[payroll] Deducting {} leave days for employee {} (leaveId={})", leaveDays, employeeId, leaveId);
         LocalDate now = LocalDate.now();
         payrollRepository
             .findByEmployeeIdAndPayYearAndPayMonth(employeeId, now.getYear(), now.getMonthValue())
@@ -105,8 +105,8 @@ public class PayrollService {
      * Idempotent: safe to call multiple times.
      */
     @Transactional
-    public void cancelDeductLeave(Long employeeId, Integer leaveDays) {
-        log.warn("[payroll] COMPENSATING: restoring {} leave deduction for employee {}", leaveDays, employeeId);
+    public void cancelDeductLeave(Long employeeId, Integer leaveDays, Long leaveId) {
+        log.warn("[payroll] COMPENSATING: restoring {} leave deduction for employee {} (leaveId={})", leaveDays, employeeId, leaveId);
         LocalDate now = LocalDate.now();
         payrollRepository
             .findByEmployeeIdAndPayYearAndPayMonth(employeeId, now.getYear(), now.getMonthValue())

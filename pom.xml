@@ -45,7 +45,7 @@
         <dependency>
             <groupId>org.fractalx</groupId>
             <artifactId>fractalx-annotations</artifactId>
-            <version>0.2.5</version>
+            <version>0.5.0</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -62,6 +62,31 @@
             <artifactId>postgresql</artifactId>
             <scope>runtime</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+            <version>3.2.0</version>
+        </dependency>
+
+        <!-- JWT Dependencies for FractalX Runtime -->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-api</artifactId>
+            <version>0.11.5</version>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-impl</artifactId>
+            <version>0.11.5</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-jackson</artifactId>
+            <version>0.11.5</version>
+            <scope>runtime</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -74,7 +99,7 @@
             <plugin>
                 <groupId>org.fractalx</groupId>
                 <artifactId>fractalx-maven-plugin</artifactId>
-                <version>0.2.5</version>
+                <version>0.5.0</version>
             </plugin>
         </plugins>
     </build>

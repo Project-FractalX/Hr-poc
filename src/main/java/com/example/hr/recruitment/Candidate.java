@@ -44,7 +44,7 @@ public class Candidate {
      *   CANCELLED → saga failed / compensation fired
      */
     @Column(nullable = false)
-    private String applicationStatus;
+    private String status;
 
     @Column(nullable = false, updatable = false)
     private LocalDateTime appliedAt;
@@ -77,8 +77,8 @@ public class Candidate {
     public void setTargetDepartmentId(Long d) { this.targetDepartmentId = d; }
     public BigDecimal getOfferedSalary() { return offeredSalary; }
     public void setOfferedSalary(BigDecimal s) { this.offeredSalary = s; }
-    public String getApplicationStatus() { return applicationStatus; }
-    public void setApplicationStatus(String s) { this.applicationStatus = s; }
+    public String getStatus() { return status; }
+    public void setStatus(String s) { this.status = s; }
     public LocalDateTime getAppliedAt() { return appliedAt; }
     public LocalDateTime getUpdatedAt() { return updatedAt; }
 }

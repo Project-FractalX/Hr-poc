@@ -6,7 +6,7 @@ import java.util.Optional;
 
 public interface CandidateRepository extends JpaRepository<Candidate, Long> {
     Optional<Candidate> findByEmail(String email);
-    List<Candidate> findByApplicationStatus(String status);
+    List<Candidate> findByStatus(String status);
     List<Candidate> findByTargetDepartmentId(Long departmentId);
-    Optional<Candidate> findByIdAndApplicationStatus(Long id, String status);
+    Optional<Candidate> findByIdAndStatus(Long id, String status);
 }

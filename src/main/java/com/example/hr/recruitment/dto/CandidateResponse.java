@@ -20,7 +20,7 @@ public class CandidateResponse {
         r.id = c.getId(); r.firstName = c.getFirstName(); r.lastName = c.getLastName();
         r.email = c.getEmail(); r.appliedPosition = c.getAppliedPosition();
         r.targetDepartmentId = c.getTargetDepartmentId();
-        r.offeredSalary = c.getOfferedSalary(); r.applicationStatus = c.getApplicationStatus();
+        r.offeredSalary = c.getOfferedSalary(); r.applicationStatus = c.getStatus();
         r.appliedAt = c.getAppliedAt();
         return r;
     }

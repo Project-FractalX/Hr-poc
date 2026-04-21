@@ -52,6 +52,7 @@ fractalx:
 
   # ── Global infrastructure endpoints ────────────────────────────────────────
 
+
   # Where Jaeger / OTel collector is running (used by all generated services)
   otel:
     endpoint: http://localhost:4317
@@ -104,7 +105,7 @@ fractalx:
         console:
           enabled: true
       flyway:
-        enabled: true
+        enabled: false
       tracing:
         enabled: true
 
@@ -128,7 +129,7 @@ fractalx:
         console:
           enabled: true
       flyway:
-        enabled: true
+        enabled: false
       tracing:
         enabled: true
 
@@ -152,7 +153,7 @@ fractalx:
         console:
           enabled: true
       flyway:
-        enabled: true
+        enabled: false
       tracing:
         enabled: true
 
@@ -176,7 +177,7 @@ fractalx:
         console:
           enabled: true
       flyway:
-        enabled: true
+        enabled: false
       tracing:
         enabled: true
 
@@ -200,7 +201,7 @@ fractalx:
         console:
           enabled: true
       flyway:
-        enabled: true
+        enabled: false
       tracing:
         enabled: true
 
@@ -225,7 +226,7 @@ fractalx:
         console:
           enabled: true
       flyway:
-        enabled: true
+        enabled: false
 
     # H2 Console: http://localhost:9090/h2-console  ->  jdbc:h2:mem:admin_db
     admin-service:
@@ -242,4 +243,4 @@ fractalx:
         console:
           enabled: true
       flyway:
-        enabled: true
+        enabled: false

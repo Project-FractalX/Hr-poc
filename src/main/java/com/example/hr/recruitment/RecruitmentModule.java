@@ -92,7 +92,7 @@ public class RecruitmentModule {
         Candidate candidate = candidateRepository.findById(candidateId)
             .orElseThrow(() -> new EntityNotFoundException("Candidate not found: " + candidateId));
 
-        candidate.setApplicationStatus("PENDING");  // saga-complete → "HIRED"
+        candidate.setStatus("PENDING");  // saga-complete → "HIRED"
         candidate.setOfferedSalary(salary);
         candidate.setTargetDepartmentId(departmentId);
         candidate = candidateRepository.save(candidate);
@@ -105,7 +105,7 @@ public class RecruitmentModule {
         departmentService.incrementHeadcount(departmentId);
 
         // Monolith only — final state; generated code gets this via callback.
-        candidate.setApplicationStatus("HIRED");
+        candidate.setStatus("HIRED");
         return candidateRepository.save(candidate);
     }
 
@@ -117,9 +117,9 @@ public class RecruitmentModule {
     public void cancelHireEmployee(Long candidateId, String firstName, String lastName,
                                     String email, String position,
                                     BigDecimal salary, Long departmentId) {
-        candidateRepository.findByIdAndApplicationStatus(candidateId, "PENDING")
+        candidateRepository.findByIdAndStatus(candidateId, "PENDING")
             .ifPresent(c -> {
-                c.setApplicationStatus("CANCELLED");
+                c.setStatus("CANCELLED");
                 candidateRepository.save(c);
             });
     }

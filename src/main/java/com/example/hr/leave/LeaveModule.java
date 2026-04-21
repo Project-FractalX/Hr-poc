@@ -101,7 +101,7 @@ public class LeaveModule {
         employeeService.markOnLeave(employeeId);
 
         // ── STEP 3: Cross-module — deduct leave days from payroll ─────────────
-        payrollService.deductLeave(employeeId, leaveDays);
+        payrollService.deductLeave(employeeId, leaveDays, leaveId);
 
         // Monolith only — set final state; generated code receives this via callback.
         entry.setStatus("APPROVED");
