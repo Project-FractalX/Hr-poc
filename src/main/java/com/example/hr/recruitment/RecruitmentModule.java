@@ -35,7 +35,7 @@ import java.math.BigDecimal;
 @DecomposableModule(
     serviceName  = "recruitment-service",
     port         = 8084,
-    ownedSchemas = {"candidates"}
+    ownedSchemas = {"recruitment_db"}
 )
 @Service
 public class RecruitmentModule {

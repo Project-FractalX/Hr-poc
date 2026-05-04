@@ -38,7 +38,7 @@ import java.time.LocalDate;
 @DecomposableModule(
     serviceName  = "employee-service",
     port         = 8081,
-    ownedSchemas = {"employees"}
+    ownedSchemas = {"employee_db"}
 )
 @Service
 public class EmployeeModule {

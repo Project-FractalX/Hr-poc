@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 @DecomposableModule(
     serviceName  = "payroll-service",
     port         = 8082,
-    ownedSchemas = {"payroll_records"}
+    ownedSchemas = {"payroll_db"}
 )
 @Service
 public class PayrollModule {

@@ -33,7 +33,7 @@ import java.time.LocalDate;
 @DecomposableModule(
     serviceName  = "leave-service",
     port         = 8083,
-    ownedSchemas = {"leave_entries"}
+    ownedSchemas = {"leave_db"}
 )
 @Service
 public class LeaveModule {

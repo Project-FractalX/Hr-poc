@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(./mvnw -pl fractalx-core -am -Dtest=AdminObservabilityGeneratorSpec test -q)",
+      "Bash(mvn -f \"E:\\\\Devs\\\\Research\\\\FractalX\\\\fractalx-core\\\\pom.xml\" -Dtest=AdminObservabilityGeneratorSpec -DfailIfNoTests=false test -q)",
+      "Bash(mvn -f \"E:\\\\Devs\\\\Research\\\\FractalX\\\\fractalx-core\\\\pom.xml\" -Dtest=AdminObservabilityGeneratorSpec -DfailIfNoTests=false -Djacoco.skip=true test -q)",
+      "Bash(mvn -f \"E:\\\\Devs\\\\Research\\\\FractalX\\\\fractalx-core\\\\pom.xml\" -Dtest=AdminObservabilityGeneratorSpec -DfailIfNoTests=false -Djacoco.skip=true test)",
+      "Bash(mvn -f \"E:\\\\Devs\\\\Research\\\\FractalX\\\\fractalx-core\\\\pom.xml\" -Dtest=Admin*Spec,DockerCompose*Spec -DfailIfNoTests=false -Djacoco.skip=true test)",
+      "Bash(mvn -f \"E:\\\\Devs\\\\Research\\\\FractalX\\\\fractalx-core\\\\pom.xml\" -Dtest=ConfigurationGeneratorSpec -DfailIfNoTests=false -Djacoco.skip=true test)",
+      "Bash(mvn -f \"E:\\\\Devs\\\\Research\\\\FractalX\\\\fractalx-core\\\\pom.xml\" -DfailIfNoTests=false -Djacoco.skip=true -Dtest=\"Admin*Spec,DockerCompose*Spec,Configuration*Spec\" test)",
+      "Bash(mvn -f \"E:\\\\Devs\\\\Research\\\\FractalX\\\\fractalx-core\\\\pom.xml\" -DfailIfNoTests=false -Djacoco.skip=true -Dtest=\"DockerCompose*Spec,Saga*Spec,*SagaSpec\" test)",
+      "Bash(mvn -f \"E:\\\\Devs\\\\Research\\\\FractalX\\\\fractalx-core\\\\pom.xml\" -DfailIfNoTests=false -Djacoco.skip=true -Dtest=\"Gateway*Spec,DockerCompose*Spec\" test)"
+    ]
+  }
+}
