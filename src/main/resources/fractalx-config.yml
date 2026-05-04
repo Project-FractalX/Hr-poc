@@ -97,9 +97,13 @@ fractalx:
 #        driver-class-name: org.postgresql.Driver
 #        username: postgres
 #        password: wow123
-        url: jdbc:mysql://localhost:3306/employee_db?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
-        driver-class-name: com.mysql.cj.jdbc.Driver
-        username: root
+#        url: jdbc:mysql://localhost:3306/employee_db?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
+#        driver-class-name: com.mysql.cj.jdbc.Driver
+#        username: root
+#        password: "1234"
+        url: jdbc:postgresql://localhost:5432/employee_db
+        driver-class-name: org.postgresql.Driver
+        username: postgres
         password: "1234"
       jpa:
         show-sql: true
@@ -125,9 +129,13 @@ fractalx:
 #        driver-class-name: org.postgresql.Driver
 #        username: postgres
 #        password: wow123
-        url: jdbc:mysql://localhost:3306/payroll_db?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
-        driver-class-name: com.mysql.cj.jdbc.Driver
-        username: root
+#        url: jdbc:mysql://localhost:3306/payroll_db?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
+#        driver-class-name: com.mysql.cj.jdbc.Driver
+#        username: root
+#        password: "1234"
+        url: jdbc:postgresql://localhost:5432/payroll_db
+        driver-class-name: org.postgresql.Driver
+        username: postgres
         password: "1234"
       jpa:
         show-sql: true
@@ -153,9 +161,13 @@ fractalx:
 #        driver-class-name: org.postgresql.Driver
 #        username: postgres
 #        password: wow123
-        url: jdbc:mysql://localhost:3306/leave_db?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
-        driver-class-name: com.mysql.cj.jdbc.Driver
-        username: root
+#        url: jdbc:mysql://localhost:3306/leave_db?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
+#        driver-class-name: com.mysql.cj.jdbc.Driver
+#        username: root
+#        password: "1234"
+        url: jdbc:postgresql://localhost:5432/leave_db
+        driver-class-name: org.postgresql.Driver
+        username: postgres
         password: "1234"
       jpa:
         show-sql: true
@@ -181,9 +193,13 @@ fractalx:
 #        driver-class-name: org.postgresql.Driver
 #        username: postgres
 #        password: wow123
-        url: jdbc:mysql://localhost:3306/recruitment_db?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
-        driver-class-name: com.mysql.cj.jdbc.Driver
-        username: root
+#        url: jdbc:mysql://localhost:3306/recruitment_db?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
+#        driver-class-name: com.mysql.cj.jdbc.Driver
+#        username: root
+#        password: "1234"
+        url: jdbc:postgresql://localhost:5432/recruitment_db
+        driver-class-name: org.postgresql.Driver
+        username: postgres
         password: "1234"
       jpa:
         show-sql: true
@@ -209,9 +225,13 @@ fractalx:
 #        driver-class-name: org.postgresql.Driver
 #        username: postgres
 #        password: wow123
-        url: jdbc:mysql://localhost:3306/department_db?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
-        driver-class-name: com.mysql.cj.jdbc.Driver
-        username: root
+#        url: jdbc:mysql://localhost:3306/department_db?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
+#        driver-class-name: com.mysql.cj.jdbc.Driver
+#        username: root
+#        password: "1234"
+        url: jdbc:postgresql://localhost:5432/department_db
+        driver-class-name: org.postgresql.Driver
+        username: postgres
         password: "1234"
       jpa:
         show-sql: true
@@ -238,9 +258,13 @@ fractalx:
 #        driver-class-name: org.postgresql.Driver
 #        username: postgres
 #        password: wow123
-        url: jdbc:mysql://localhost:3306/saga_db?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
-        driver-class-name: com.mysql.cj.jdbc.Driver
-        username: root
+#        url: jdbc:mysql://localhost:3306/saga_db?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
+#        driver-class-name: com.mysql.cj.jdbc.Driver
+#        username: root
+#        password: "1234"
+        url: jdbc:postgresql://localhost:5432/saga_db
+        driver-class-name: org.postgresql.Driver
+        username: postgres
         password: "1234"
       jpa:
         show-sql: true
@@ -259,9 +283,13 @@ fractalx:
 #        driver-class-name: org.h2.Driver
 #        username: sa
 #        password: ""
-        url: jdbc:mysql://localhost:3306/admin_db?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
-        driver-class-name: com.mysql.cj.jdbc.Driver
-        username: root
+#        url: jdbc:mysql://localhost:3306/admin_db?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
+#        driver-class-name: com.mysql.cj.jdbc.Driver
+#        username: root
+#        password: "1234"
+        url: jdbc:postgresql://localhost:5432/admin_db
+        driver-class-name: org.postgresql.Driver
+        username: postgres
         password: "1234"
       jpa:
         show-sql: true
